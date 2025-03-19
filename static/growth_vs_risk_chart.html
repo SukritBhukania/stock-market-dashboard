@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth vs. Risk Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="growthVsRiskChart"></canvas>
+    <script>
+        var ctx = document.getElementById('growthVsRiskChart').getContext('2d');
+        var growthVsRiskChart = new Chart(ctx, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Stock Growth vs Risk',
+                    data: [
+                        { x: 150, y: 20, r: 10 },
+                        { x: 160, y: 25, r: 15 },
+                        { x: 170, y: 30, r: 20 },
+                        { x: 180, y: 35, r: 25 },
+                        { x: 190, y: 40, r: 30 }
+                    ],
+                    backgroundColor: '#28a745',
+                    borderColor: '#1e7e34',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return 'Growth: ' + tooltipItem.raw.x + ' | Risk: ' + tooltipItem.raw.y;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Growth'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Risk'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

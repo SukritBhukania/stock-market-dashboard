@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ industry }} Financial Ratios & Stock Forecasting</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            background: #1a1a1a;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 5px;
+            background: #007bff;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #0056b3;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background: url('https://source.unsplash.com/1600x500/?finance,stock-analysis') no-repeat center;
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        .section {
+            padding: 30px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #87c1ff;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #007bff;
+            color: white;
+            padding: 12px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #007bff;
+            background: #f5f7fa;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/industry">Industry Analysis</a>
+        <a href="/ratios">Ratios & Forecast</a>
+    </nav>
+
+    <div class="hero">
+        {{ industry }} Financial Ratios & Stock Forecasting
+    </div>
+
+    <div class="container">
+        <h2>Key Financial Ratios</h2>
+        <p>Analyzing stock fundamentals with P/E ratios, market cap, and dividend yield.</p>
+        <table>
+            <tr>
+                <th>Stock</th>
+                <th>P/E Ratio</th>
+                <th>Market Cap</th>
+                <th>Dividend Yield</th>
+                <th>Volatility</th>
+            </tr>
+            {% for ratio in ratios %}
+            <tr>
+                <td>{{ ratio.symbol }}</td>
+                <td>{{ ratio.pe_ratio|round(2) }}</td>
+                <td>{{ ratio.market_cap|round(2) }} Billion</td>
+                <td>{{ ratio.dividend_yield|round(2) }}%</td>
+                <td>{{ ratio.volatility|round(2) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Stock Market Forecasting</h2>
+        <p>Visualizing risk scores and projected stock trends.</p>
+        <div class="chart-container">
+            <iframe src="/static/forecast_chart.html" title="Forecast Chart"></iframe>
+        </div>
+
+        <h2>Additional Analysis: Stock Growth vs. Risk</h2>
+        <p>Visualizing stock growth against risk for more informed decisions.</p>
+        <div class="chart-container">
+            <iframe src="/static/growth_vs_risk_chart.html" title="Growth vs Risk"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        Stock Market Dashboard | {{ industry }} Financial Insights | &copy; 2025
+    </footer>
+
+</body>
+</html>

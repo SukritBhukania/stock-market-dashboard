@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Ratios & Forecast</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            background: #1a1a1a;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 5px;
+            background: #007bff;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #0056b3;
+        }
+        .container {
+            max-width: 90%;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background: url('https://source.unsplash.com/1600x500/?finance,stock-analysis') no-repeat center;
+            background-size: cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        .section {
+            padding: 30px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #87c1ff;
+            margin-bottom: 15px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #007bff;
+            background: #f5f7fa;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/industry">Industry Analysis</a>
+        <a href="/ratios">Ratios & Forecast</a>
+    </nav>
+
+    <div class="hero">
+        Industry Analytics
+    </div>
+
+    <div class="container">
+        <h2>Industry Growth Trend</h2>
+        <iframe src="/static/industry_growth_trend.html" title="Industry Growth Trend"></iframe>
+
+        <h2>Volatility Chart</h2>
+        <iframe src="/static/industry_volatility_chart.html" title="Volatility Chart"></iframe>
+
+        <h2>Volume Traded</h2>
+        <iframe src="/static/industry_volume_chart.html" title="Volume Traded"></iframe>
+
+        <h2>Closing Prices</h2>
+        <iframe src="/static/industry_chart.html" title="Closing Prices"></iframe>
+    </div>
+
+    <footer>
+        Stock Market Dashboard | Financial Insights | &copy; 2025
+    </footer>
+
+</body>
+</html>
